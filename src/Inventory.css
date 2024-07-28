@@ -1,0 +1,146 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 99%;
+  overflow:hidden;
+  
+   
+}
+
+.inventory-app {
+  display: flex;
+  flex-direction: column;
+  height: 94vh; /* Ensures the app takes full viewport height */
+  overflow:hidden;
+  max-height:100vh;
+  overflow-y: hidden;
+
+  
+}
+
+.inventory-header {
+  padding: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-main {
+  display: flex;
+  flex: 1; /* Fills the remaining space */
+  margin-top: 20px; /* Adds some gap between header and main content */
+  overflow-y: auto; /* Makes sidebar scrollable if content overflows */
+  overflow-x: hidden; /* Prevents the main area from scrolling */
+}
+
+.inventory-sidebar {
+  width: 200px;
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-right: 20px; /* Adds some gap between sidebar and main content */
+  overflow-y: auto; /* Makes sidebar scrollable if content overflows */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+/* Hide scrollbar for WebKit-based browsers */
+.inventory-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.inventory-sidebar {
+  scrollbar-width: none; /* Firefox */
+}
+
+.inventory-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 20px; /* Add margin-bottom to create space */
+}
+
+.inventory-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.inventory-sidebar li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.inventory-sidebar li:hover {
+  background-color: #ddd;
+}
+
+.inventory-sidebar li.inventory-active {
+  background-color: #007bff8d;
+  color: white;
+}
+
+.inventory-content {
+  flex: 1;
+  padding: 20px;
+  overflow: auto; /* Enables scrolling for the main content if needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Table styling
+.table {
+  width: 98%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+.header {
+  display: table-row;
+  background-color: #edeff2;
+}
+
+.row {
+  display: table-row;
+  background-color: white;
+}
+
+.cell {
+  display: table-cell;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+} */
+
+.inventory-table {
+  margin-top: 30px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inventory-table th,td
+ {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  
+} 
+
+.inventory-table th {
+  background-color: #f4f4f4;
+}
+
+.custom-header {
+  display: table-row;
+  background-color: #edeff2;
+}
+
+.custom-row {
+  display: table-row;
+  background-color: white;
+}
+
+.custom-cell {
+  display: table-cell;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
