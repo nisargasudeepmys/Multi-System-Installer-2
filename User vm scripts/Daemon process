@@ -1,0 +1,35 @@
+#DAEMON PROCESS
+1. Open a text editor.
+2. Write the shell script. Below is an example of a simple shell script that runs a Python script:
+#!/bin/bash
+
+# Navigate to the directory containing the Python script
+cd /home/user2/MSI
+
+# Run the Python script using the Python interpreter
+python3 monitoring-1.py
+
+3. chmod +x monitoring.sh
+4. chmod +x monitoring py
+sudo nano /etc/systemd/system/monitoring.service
+
+Then, add the following content to the monitoring.service file:
+
+      [Unit]
+      Description=Monitoring Daemon
+      After=network.target
+      
+      [Service]
+      Type=simple
+      ExecStart="path to .sh file"
+      Restart=always
+      
+      [Install]
+      WantedBy=multi-user.target
+
+
+
+sudo systemctl daemon-reload
+sudo systemctl enable monitoring
+sudo systemctl start monitoring
+sudo status systemctl status monitoring
